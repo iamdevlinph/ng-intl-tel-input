@@ -65,7 +65,7 @@ angular.module('ngIntlTelInput')
           // Validation.
           ctrl.$validators.ngIntlTelInput = function (value) {
             // if phone number is deleted / empty do not run phone number validation
-            if (attr.phoneValidation.toLowerCase() === 'true' && (value || elm[0].value.length > 0)) {
+            if (attr.phoneValidation && attr.phoneValidation.toLowerCase() === 'true' && (value || elm[0].value.length > 0)) {
                 return elm.intlTelInput('isValidNumber');
             } else {
                 return true;
